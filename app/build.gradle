@@ -28,7 +28,7 @@ buildscript {
 }
 greendao {
     schemaVersion 1
-    daoPackage 'scrollview.com.cn.myproject'
+    daoPackage 'scrollview.com.cn.myproject.gen'
     targetGenDir 'src/main/java'
 }
 dependencies {

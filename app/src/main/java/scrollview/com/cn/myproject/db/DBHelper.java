@@ -24,7 +24,7 @@ public class DBHelper {
     public static DaoMaster getDaoMaster(Context context) {
         if (daoMaster == null) {
             DaoMaster.OpenHelper helper = new DaoMaster.DevOpenHelper(context,
-                    "notes.db", null);
+                    "myproject.db", null);
             daoMaster = new DaoMaster(helper.getWritableDatabase());
         }
         return daoMaster;
