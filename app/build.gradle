@@ -1,6 +1,20 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        debug {
+            keyAlias 'li'
+            keyPassword 'li123456'
+            storeFile file('C:/TextProject/MyProject/app/key.jks')
+            storePassword 'li123456'
+        }
+        release {
+            keyAlias 'li'
+            keyPassword 'li123456'
+            storeFile file('C:/TextProject/MyProject/app/key.jks')
+            storePassword 'li123456'
+        }
+    }
     compileSdkVersion 27
     defaultConfig {
         applicationId "scrollview.com.cn.myproject"
@@ -42,4 +56,6 @@ dependencies {
     implementation 'org.greenrobot:greendao-generator:3.2.2'
     implementation 'com.lzy.net:okgo:3.0.4'
     implementation 'com.google.code.gson:gson:2.8.5'
+    compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
+    implementation 'com.android.support:design:27.1.1'
 }
