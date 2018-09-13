@@ -18,7 +18,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".BaseActivity" />
-        <activity android:name=".AddListActivity"></activity>
+        <activity android:name=".AddListActivity" />
+        <activity android:name=".PriseOpenActivity"></activity>
     </application>
 
 </manifest>

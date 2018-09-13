@@ -14,6 +14,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     @Override
     public void initData() {
         findViewById(R.id.add_list).setOnClickListener(this);
+        findViewById(R.id.open_prize).setOnClickListener(this);
 
     }
 
@@ -22,6 +23,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         switch (v.getId()) {
             case R.id.add_list:
                 goIntent(AddListActivity.class);
+                break;
+            case R.id.open_prize:
+                goIntent(PriseOpenActivity.class);
                 break;
         }
     }

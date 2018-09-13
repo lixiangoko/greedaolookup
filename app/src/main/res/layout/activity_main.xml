@@ -9,6 +9,7 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/open_prize"
         android:layout_width="100dp"
         android:layout_height="50dp"
         android:background="#ae00"

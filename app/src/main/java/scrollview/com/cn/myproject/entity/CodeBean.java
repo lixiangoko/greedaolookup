@@ -11,8 +11,8 @@ import java.io.Serializable;
 public class CodeBean implements Serializable {
     @Id
     private Long id;
-    private String content;
-    private String stage;
+    private String content; //码数
+    private String stage;//期数
     private static final long serialVersionUID = 1L;
 
     @Generated(hash = 1587485775)
