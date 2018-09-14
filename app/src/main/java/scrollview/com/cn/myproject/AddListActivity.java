@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import java.util.List;
 
@@ -21,6 +22,7 @@ public class AddListActivity extends BaseActivity implements View.OnClickListene
     private RecyclerView recyclerview;
     private AddListAdapter addListAdapter;
     private EditText input_et;
+    private DaoSession daoSession;
 
     @Override
     public void initView() {
@@ -28,28 +30,24 @@ public class AddListActivity extends BaseActivity implements View.OnClickListene
         recyclerview = findViewById(R.id.recyclerview);
         input_et = findViewById(R.id.input_et);
         recyclerview.setLayoutManager(new LinearLayoutManager(this));
+        TextView title = findViewById(R.id.title_name);
+        title.setText("添加");
+        daoSession = MyApplication.getInstances().getDaoSession();
+    }
+
+    public void back(View view) {
+        finish();
     }
 
     @Override
     public void initData() {
-        addListAdapter = new AddListAdapter(null);
+        addListAdapter = new AddListAdapter(daoSession.loadAll(CodeBean.class));
         recyclerview.setHasFixedSize(true);
         recyclerview.setAdapter(addListAdapter);
         findViewById(R.id.add_bt).setOnClickListener(this);
 
-        daoSession = MyApplication.getInstances().getDaoSession();
-//        CodeBean codeBean = new CodeBean(null, "张三", "123");
-//        daoSession.getCodeBeanDao().insert(codeBean);
-//        CodeBean codeBean2 = new CodeBean(null, "张三2", "123");
-//        daoSession.getCodeBeanDao().insert(codeBean2);
-//        List<CodeBean> codeBean1 = daoSession.loadAll(CodeBean.class);
-//
-//        codeBean.setContent("李四");
-//        daoSession.update(codeBean);
-
     }
 
-    private DaoSession daoSession;
 
     @Override
     public void onClick(View v) {
@@ -59,11 +57,10 @@ public class AddListActivity extends BaseActivity implements View.OnClickListene
                     String ebt = input_et.getText().toString().trim();
                     int index = ebt.indexOf(",");
                     String stage = ebt.substring(0, index);
-                    String content = ebt.substring(index, ebt.length());
-                    Log.d("----", "----------AddListActivity--方法--onClick:  " + stage);
-                    Log.d("----", "----------AddListActivity--方法--onClick:  " + content);
+                    String content = ebt.substring(index + 1, ebt.length());
                     CodeBean codeBean = new CodeBean(null, content, stage);
                     daoSession.insert(codeBean);
+                    addListAdapter.setNewData(daoSession.loadAll(CodeBean.class));
                 } catch (Exception e) {
                     input_et.setText("");
                     showToast("输入错误");
