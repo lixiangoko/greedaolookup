@@ -2,6 +2,8 @@ package scrollview.com.cn.myproject;
 
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.widget.TextView;
 
 import java.util.List;
 
@@ -18,6 +20,8 @@ public class PriseOpenActivity extends BaseActivity {
     @Override
     public void initView() {
         setContentView(R.layout.activity_prise_open);
+        TextView title = findViewById(R.id.title_name);
+        title.setText("开奖列表查看");
         prise_rv = findViewById(R.id.prise_rv);
         prise_rv.setLayoutManager(new LinearLayoutManager(this));
         priseOpenListAdapter = new PriseOpenListAdapter(null);
@@ -33,4 +37,7 @@ public class PriseOpenActivity extends BaseActivity {
 
     }
 
+    public void back(View view) {
+        finish();
+    }
 }

@@ -6,8 +6,18 @@
     android:orientation="vertical"
     tools:context=".PriseOpenActivity">
 
+    <include layout="@layout/title_layout" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="长按可以对数据更改"
+        android:textColor="#999999" />
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/prise_rv"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp" />
 </LinearLayout>
