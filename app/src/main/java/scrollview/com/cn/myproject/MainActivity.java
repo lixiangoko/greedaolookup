@@ -1,7 +1,6 @@
 package scrollview.com.cn.myproject;
 
 import android.view.View;
-import android.widget.LinearLayout;
 
 public class MainActivity extends BaseActivity implements View.OnClickListener {
 
