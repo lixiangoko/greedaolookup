@@ -14,7 +14,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="第:" />
+            android:text="第" />
 
         <TextView
             android:id="@+id/stage"
@@ -32,7 +32,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:text="开:" />
+            android:text="开奖" />
 
         <TextView
             android:id="@+id/content"
