@@ -5,13 +5,13 @@ android {
         debug {
             keyAlias 'li'
             keyPassword 'li123456'
-            storeFile file('C:/TextProject/MyProject/app/key.jks')
+            storeFile file('D:/project/greedaolookup/app/key.jks')
             storePassword 'li123456'
         }
         release {
             keyAlias 'li'
             keyPassword 'li123456'
-            storeFile file('C:/TextProject/MyProject/app/key.jks')
+            storeFile file('D:/project/greedaolookup/app/key.jks')
             storePassword 'li123456'
         }
     }

@@ -18,7 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:layout_weight="1"
-            android:hint="请输入期号和奖号，用道号隔开" />
+            android:hint="请输入期号和头号，用道号隔开" />
 
         <Button
             android:id="@+id/add_bt"
